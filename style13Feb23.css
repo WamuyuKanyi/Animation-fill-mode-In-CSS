@@ -1,0 +1,48 @@
+/* The animation-fill-mode property specifies a style for the element when the animation is not playing (before it starts, after it ends, or both). */
+
+/* CSS animations do not affect the element before the first keyframe is played or after the last keyframe is played. The animation-fill-mode property can override this behavior. */
+/* none	Default value. Animation will not apply any styles to the element before or after it is executing
+forwards	The element will retain the style values that is set by the last keyframe (depends on animation-direction and animation-iteration-count)
+backwards	The element will get the style values that is set by the first keyframe (depends on animation-direction), and retain this during the animation-delay period
+both	The animation will follow the rules for both forwards and backwards, extending the animation properties in both directions
+initial	Sets this property to its default value. Read about initial
+inherit	Inherits this property from its parent element. Read about inherit */
+
+
+/* animation-fill-mode: what values are applied by the animation outside the time it is executing */
+
+div{
+  width: 200px;
+  height: 100px;
+  margin: 10px;
+  color: white;
+}
+
+
+
+  .animation {
+    background: blue;
+    animation: move 5s 2;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes move {
+    0%{
+      opacity:0 ;
+    }
+
+    25%{
+      transform: translateX(200px);
+      opacity: 0.25;
+    }
+
+    50%{
+      transform: translateX(-100px);
+      opacity: 1;
+    }
+    100%{
+      transform: translateX(0px);
+      opacity: 0.5;
+
+    }
+  }
